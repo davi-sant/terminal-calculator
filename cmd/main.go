@@ -16,8 +16,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
 	getNum1 = strings.TrimSpace(getNum1)
+
 	fmt.Println("-----------------------------")
 	fmt.Println("Qual a operacao (+ - * /)")
 	operation, err := reader.ReadString('\n')
@@ -25,14 +25,16 @@ func main() {
 		panic(err)
 	}
 	operation = strings.TrimSpace(operation)
+
 	fmt.Println("-----------------------------")
 	fmt.Println("Digite numero")
+
 	getNum2, err := reader.ReadString('\n')
 	if err != nil {
 		panic(err)
 	}
-
 	getNum2 = strings.TrimSpace(getNum2)
+
 	num1, _ := strconv.ParseFloat(getNum1, 64)
 	num2, _ := strconv.ParseFloat(getNum2, 64)
 
