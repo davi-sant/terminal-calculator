@@ -12,42 +12,42 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Println("Digite um numero")
-	num1, err := reader.ReadString('\n')
+	getNum1, err := reader.ReadString('\n')
 	if err != nil {
 		panic(err)
 	}
 
-	num1 = strings.TrimSpace(num1)
+	getNum1 = strings.TrimSpace(getNum1)
 	fmt.Println("-----------------------------")
 	fmt.Println("Qual a operacao (+ - * /)")
-	operacao, err := reader.ReadString('\n')
+	operation, err := reader.ReadString('\n')
 	if err != nil {
 		panic(err)
 	}
-	operacao = strings.TrimSpace(operacao)
+	operation = strings.TrimSpace(operation)
 	fmt.Println("-----------------------------")
 	fmt.Println("Digite numero")
-	num2, err := reader.ReadString('\n')
+	getNum2, err := reader.ReadString('\n')
 	if err != nil {
 		panic(err)
 	}
 
-	num2 = strings.TrimSpace(num2)
-	convertNum1, _ := strconv.ParseFloat(num1, 64)
-	convertNum2, _ := strconv.ParseFloat(num2, 64)
+	getNum2 = strings.TrimSpace(getNum2)
+	num1, _ := strconv.ParseFloat(getNum1, 64)
+	num2, _ := strconv.ParseFloat(getNum2, 64)
 
 	var sum float64;
 
-	switch operacao {
+	switch operation {
 	case "+":
-		sum = convertNum1 + convertNum2
+		sum = num1 + num2
 	case "-":
-		sum = convertNum1 - convertNum2
+		sum = num1 - num2
 	case "*":
-		sum = convertNum1 * convertNum2
+		sum = num1 * num2
 	case "/":
-		if convertNum2 != 0 {
-			sum = convertNum1 / convertNum2
+		if num2 != 0 {
+			sum = num1 / num2
 		} else {
 			fmt.Println("Error: divisão por zero.")
 		}
